@@ -1,30 +1,34 @@
-# React + TypeScript + Vite
+# Тестовое задание на должность "Frontend-разработчик"
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Стек:
+- react
+- redux(redux-toolkit)
+- typescript
+- Остальное на усмотрение, НО стоит использовать минимальное кол-во библиотек(например, таблицу нужно точно сделать самостоятельно, без сторонних библиотек)
 
-Currently, two official plugins are available:
+Дано:
+- Имеется таблица со списком компаний
+- Данные в таблице должны храниться в сторе
+- Данные для таблицы - фейковые, создать самостоятельно
+- Шапка таблицы "компании": Чекбокс “Выделить всё”
+- Тело таблицы имеет столбцы: | Чекбокс | Название компании  | Адрес
+- При клике по чекбоксу в строке, соответствующая строка выделяется цветом на усмотрение
+- При клике по чекбоксу “Выделить всё” - выделяются все строки.
+- Все поля таблицы редактируемые.
+- В таблице реализовать механизм добавления/удаления компаний по соответствующим кнопкам.
+- Удаление может быть множественное(если выделены несколько строк).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Будет плюсом:
+- предусмотреть вариант когда компаний может быть 10 000+ (желательно предложить вариант без переключения по страницам, динамическая загрузка при скролле)
 
-## Expanding the ESLint configuration
+Примечания:  
+- Желательно использовать минимум сторонних библиотек.  
+- Дизайн приложения на ваш вкус. 
+- Выполнение всех пунктов не является обязательным, но желательным.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+***Все поставленные задачи были выполнены!***
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Рабочая версия приложение находится по ссылке: [Test task](https://whats-app-web-clone-dmitrymarc.vercel.app/)
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+<img src="app-preview.jpg" alt="screen" width="893"/>

@@ -1,0 +1,40 @@
+.company {
+    display: grid;
+    grid-template-columns: 20px 1fr 1fr 20px;
+    gap: 8px;
+    padding: 8px;
+    border: 1px solid gray;
+    border-radius: 8px;
+}
+
+.checked {
+    background-color: lightblue;
+}
+
+.column {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.column:last-child {
+    justify-content: flex-end;
+}
+
+.name,
+.address {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn {
+    border: none;
+    padding: 0;
+}
+
+.icon {
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+}

@@ -1,0 +1,1 @@
+export {companies} from "@/shared/assets/mocks/mockData.ts";

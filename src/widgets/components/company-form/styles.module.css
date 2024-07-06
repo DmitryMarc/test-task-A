@@ -1,0 +1,22 @@
+.form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.title {
+    font-size: 20px;
+}
+
+.btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+}
+
+.icon {
+    width: 14px;
+    min-width: 14px;
+    height: 14px;
+}
