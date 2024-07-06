@@ -69,6 +69,7 @@ export const CompaniesList: FC = () => {
         if (checkedCompaniesIds.length) {
             await dispatch(deleteCompanies(checkedCompaniesIds));
             resizeHandler();
+            isAllSelected && setIsAllSelected(false);
         }
     }
 
