@@ -43,14 +43,14 @@ export const CompanyForm: FC<IProps> = (props) => {
     const submitHandler = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        if (!companyName) {
+        if (!companyName.trim()) {
             setError('Обязательное поле');
             return;
         }
 
         const newData: CompanyNewDataType = {
-            name: companyName,
-            address
+            name: companyName.trim(),
+            address: address.trim()
         }
 
         if (mode === 'edit' && data) {
