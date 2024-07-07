@@ -88,7 +88,7 @@ export const CompaniesList: FC = () => {
         let element = e.currentTarget;
         const offset = element.scrollHeight - element.scrollTop;
         const height = element.clientHeight;
-        if (offset === height && currentPage < latestPage) {
+        if (Math.abs(offset - height) <= 1 && currentPage < latestPage) {
             dispatch(loadMoreItems(currentPage + 1))
         }
     }
@@ -123,7 +123,6 @@ export const CompaniesList: FC = () => {
                         ref={listRef}
                         className={classes.list}
                         onScroll={loadMoreItemsHandler}
-                        onTouchMove={loadMoreItemsHandler}
                     >
                         <li className={classes.header}>
                             <h2 className={classes.title}>Компании</h2>
