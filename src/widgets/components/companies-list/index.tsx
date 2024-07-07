@@ -1,4 +1,4 @@
-import {FC, useState, UIEvent, useRef} from "react";
+import {FC, useState, UIEvent, useRef, useEffect} from "react";
 import classes from './styles.module.css';
 import {Company} from "@/entities/company";
 import {useDispatch, useSelector} from "react-redux";
@@ -39,7 +39,6 @@ export const CompaniesList: FC = () => {
     }
 
     const selectAllHandler = () => {
-        setIsAllSelected(!isAllSelected);
         dispatch(selectAllCompanies(!isAllSelected));
     }
 
@@ -69,7 +68,6 @@ export const CompaniesList: FC = () => {
         if (checkedCompaniesIds.length) {
             await dispatch(deleteCompanies(checkedCompaniesIds));
             resizeHandler();
-            isAllSelected && setIsAllSelected(false);
         }
     }
 
@@ -101,6 +99,14 @@ export const CompaniesList: FC = () => {
             }
         }
     }
+
+    useEffect(() => {
+        if (companies.length !== checkedCompaniesIds.length) {
+            setIsAllSelected(false);
+        } else {
+            setIsAllSelected(true);
+        }
+    }, [companies.length, checkedCompaniesIds.length])
 
     return (
         <div className={classes.container}>
