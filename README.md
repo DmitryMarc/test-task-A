@@ -31,4 +31,4 @@
 
 Рабочая версия приложение находится по ссылке: [Test task](https://test-task-a.vercel.app/)
 
-<img src="app-preview.jpg" alt="screen" width="893"/>
+<img src="app-preview.jpg" alt="screen" width="899"/>

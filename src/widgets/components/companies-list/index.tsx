@@ -106,12 +106,12 @@ export const CompaniesList: FC = () => {
         <div className={classes.container}>
             <div className={classes.btns}>
                 <Button onClick={showModalHandler} >
-                    Добавить компанию
+                    Добавить
                 </Button>
                 {!!checkedCompaniesIds.length
                     && (
                         <Button onClick={deleteHandler}>
-                            Удалить выбранные компании
+                            Удалить выбранное
                         </Button>
                     )
                 }
@@ -119,7 +119,12 @@ export const CompaniesList: FC = () => {
 
             {companies.length
                 ? (
-                    <ul ref={listRef} className={classes.list} onScroll={loadMoreItemsHandler}>
+                    <ul
+                        ref={listRef}
+                        className={classes.list}
+                        onScroll={loadMoreItemsHandler}
+                        onTouchMove={loadMoreItemsHandler}
+                    >
                         <li className={classes.header}>
                             <h2 className={classes.title}>Компании</h2>
                             <Checkbox label={'Выделить всё'} value={isAllSelected} onCheck={selectAllHandler} />
