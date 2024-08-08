@@ -1,5 +1,5 @@
 import classes from './styles.module.css';
-import {ChangeEvent, FC} from "react";
+import {ChangeEvent, FC, memo} from "react";
 import {Button, Checkbox, Icon} from "@/shared/components";
 
 interface IProps {
@@ -13,7 +13,7 @@ interface IProps {
     onCheck: (id: number, isChecked: boolean) => void;
 }
 
-export const Company: FC<IProps> = (props) => {
+export const Company: FC<IProps> = memo((props) => {
     const {
         data: {
             id,
@@ -52,4 +52,4 @@ export const Company: FC<IProps> = (props) => {
             </div>
         </li>
     )
-}
+})

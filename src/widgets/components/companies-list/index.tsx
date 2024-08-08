@@ -1,4 +1,4 @@
-import {FC, useState, UIEvent, useRef, useEffect} from "react";
+import {FC, useState, UIEvent, useRef, useEffect, useCallback} from "react";
 import classes from './styles.module.css';
 import {Company} from "@/entities/company";
 import {useDispatch, useSelector} from "react-redux";
@@ -34,22 +34,22 @@ export const CompaniesList: FC = () => {
     const currentPage = useSelector(selectCurrentPage);
     const latestPage = useSelector(selectLatestPage);
 
-    const checkHandler = (id: number, isChecked: boolean) => {
+    const checkHandler = useCallback((id: number, isChecked: boolean) => {
         dispatch(checkCompany({id, isChecked}))
-    }
+    }, [])
 
     const selectAllHandler = () => {
         dispatch(selectAllCompanies(!isAllSelected));
     }
 
-    const editHandler = (id: number) => {
+    const editHandler = useCallback((id: number) => {
         const findItem = companies.find(item => item.id === id);
         if (findItem) {
             setEditableData(findItem);
             setIsModalShown(true);
             setMode('edit');
         }
-    }
+    }, [])
 
     const submitHandler = async (mode: ModeType, newData: CompanyNewDataType) => {
         switch (mode){
